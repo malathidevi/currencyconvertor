@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+h2 {
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to Real Time Currency Converter</h1>
+    <form action="/convert" method="POST">
+        <label for="amount">Amount:</label>
+        <input type="text" name="amount" id="amount" required><br><br>
+
+        <label for="from_currency">From Currency:</label>
+        <select name="from_currency" id="from_currency">
+            <option value="INR">INR</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+            <option value="CHF">CHF</option>
+            <option value="CNY">CNY</option>
+            <option value="NZD">NZD</option>
+            <!-- Add more currency options here -->
+        </select><br><br>
+
+        <label for="to_currency">To Currency:</label>
+        <select name="to_currency" id="to_currency">
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+            <option value="CHF">CHF</option>
+            <option value="CNY">CNY</option>
+            <option value="NZD">NZD</option>
+            <!-- Add more currency options here -->
+        </select><br><br>
+
+        <input type="submit" value="Convert">
+    </form>
+
+    {% if converted_amount %}
+        <h2>Converted Amount: {{ converted_amount }}</h2>
+    {% endif %}
+</body>
+</html>
